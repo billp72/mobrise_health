@@ -1,0 +1,301 @@
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.ng-scope{
+  /*min-width:100%;
+  min-height:100%;*/
+  margin: 0;
+  padding: 0;
+}
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover,a:focus {
+  color:grey;
+}
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+header.goal{
+    cursor:pointer;
+	background-color:rgb(237, 237, 237);
+	color:black;
+	font-weight:600;
+}
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.btn-droppable { width: 210px; height: 30px; padding-left: 0px; }
+.btn-draggable { width: 210px; height: 30px; padding: 5px; margin-left:5px;}
+.drag {
+  /*text-align: center;*/
+  text-align: right;
+  border-bottom: 1px solid #e5e5e5;
+  background:#fff url("../images/iphone6_bg.jpg") no-repeat right top;
+  height:500px;
+}
+div#mobile_schedule{
+	display:none;
+}
+div#mobile_schedule table.trtable.override tr th{
+   padding-right:5px;
+}
+div#mobile_schedule table.trtable.override{
+   font-size:.8em;
+   display:table;
+   width:100%;
+}
+div#mobile_schedule table.trtable.override thead{
+	border-bottom: thin solid black;
+}
+div#mobile_schedule table.trtable.override tbody{
+	line-height: 25px;
+}
+div#mobile_schedule table.trtable.override tr:nth-child(even) {background: #e3e6de}
+div#mobile_schedule table.trtable.override tr td{
+   padding-right:5px;
+}
+div#mobile_progress{
+	display:none;
+	margin-right: 5px;
+	position:relative;
+	top:20px;
+}
+#mobile_head{
+	position: relative;
+	top: 60px;
+	right: 169px;
+	color:white;
+}
+.mobile-menu{
+	color:white;
+	margin: 153px 40px 0 0;
+}
+.mobile-menu .schedule{
+	margin-left:10px;
+}
+.mobile-menu .status{
+	margin-left:10px;
+}
+#dragArea{
+	width:216px;
+	height:250px;
+	margin: 0 0 0px 905px;
+	padding: 0;
+	position: relative;
+	top: 150px;
+	
+}
+#category-container{
+    position:absolute;
+    margin-top:-500px;
+    margin-left:190px;
+	width:300px;
+	border:2px solid #5bc0de;
+	padding:10px;
+}
+#exercise-container{
+    position:absolute;
+    margin-top:-500px;
+    margin-left:500px;
+	width:250px;
+	border:2px solid #5bc0de;
+	padding:10px;
+}
+.dragibles{
+  	margin:5px 10px 10px 10px;
+  	background-color:#31b0d5;
+  	color:rgb(166, 74, 74);
+  	width:auto;
+  	padding:5px;
+}
+.sidetabs{
+	position: absolute;
+	top: 100px;
+	left: 0;
+	color: #fff;
+	font-size: 13px;
+	line-height: 40px;
+	z-index: 3;
+}
+.sidetabs .sidetab{
+	width: 50px;
+	height: 120px;
+	margin-top: 10px;
+	-webkit-transform: translateX(-10px);
+	-moz-transform: translateX(-10px);
+	-o-transform: translateX(-10px);
+	-ms-transform: translateX(-10px);
+	transform: translateX(-10px);
+	-webkit-transition: -webkit-transform 0.2s ease-in;
+	-moz-transition: -moz-transform 0.2s ease-in;
+	-o-transition: -o-transform 0.2s ease-in;
+	-ms-transition: -ms-transform 0.2s ease-in;
+	transition: transform 0.2s ease-in;
+}
+.sidetabs .sidetab.sidetab-skin-green{
+	background-color: #31b0d5;/*#8db223;*/
+}
+.sidetabs .sidetab:hover {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -o-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+.sidetabs .sidetab .sidetab-label {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 50px;
+  height: 120px;
+  padding: 5px;
+  z-index: 2;
+  color:white;
+  font-size:30px;
+  transform: rotate(90deg);
+  transform-origin: 35% 30%;
+}
+a {text-decoration: none !important;}
+.sidetabs .sidetab.sidetab-menu-expanded {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.sidetabs .sidetab.sidetab-skin-green:hover, .sidetabs .sidetab.sidetab-skin-green.sidetab-menu-expanded {
+  background-color: #2391B2;
+}
+.sidetabs .sidetab .sidetab-menucontainer.sidetab-menu-expanded {
+	-webkit-animation: slideInFadeIn 0.2s both;
+	-moz-animation: slideInFadeIn 0.2s both;
+	-o-animation: slideInFadeIn 0.2s both;
+	-ms-animation: slideInFadeIn 0.2s both;
+	animation: slideInFadeIn 0.2s both;
+}
+.sidetabs .sidetab .sidetab-menucontainer.sidetab-menu-expanded {
+  background-color:rgba(91,192,222,0.9);
+  opacity:0.6;
+  width:230px;
+  -webkit-transform: translateX(50px);
+  -moz-transform: translateX(50px);
+  -o-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+}
+.sidetabs .sidetab .sidetab-menucontainer {
+	position: absolute;
+	top: -13px;
+	left: 0;
+	-webkit-transform: translateX(-290px);
+	-moz-transform: translateX(-290px);
+	-o-transform: translateX(-290px);
+	-ms-transform: translateX(-290px);
+	transform: translateX(-290px);
+	-webkit-transition: -webkit-transform 0.2s ease-in;
+	-moz-transition: -moz-transform 0.2s ease-in;
+	-o-transition: -o-transform 0.2s ease-in;
+	-ms-transition: -ms-transform 0.2s ease-in;
+	transition: transform 0.2s ease-in;
+	
+	
+}
+.beacon-goals {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  display: block;
+  background: transparent;
+  width: 30px;
+  height: 108px;
+  border: 6px solid #1f2e36;
+  text-indent: -500px;
+  overflow: hidden;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform: scale 1.5;
+  -moz-transform: scale 1.5;
+  -o-transform: scale 1.5;
+  -ms-transform: scale 1.5;
+  transform: scale 1.5;
+  -webkit-transition: 1.5s all ease-in-out;
+  -moz-transition: 1.5s all ease-in-out;
+  -o-transition: 1.5s all ease-in-out;
+  -ms-transition: 1.5s all ease-in-out;
+  transition: 1.5s all ease-in-out;
+  -webkit-animation: radiate 1.5s ease-in-out infinite;
+  -moz-animation: radiate 1.5s ease-in-out infinite;
+  -o-animation: radiate 1.5s ease-in-out infinite;
+  -ms-animation: radiate 1.5s ease-in-out infinite;
+  animation: radiate 1.5s ease-in-out infinite;
+}
+
+
+/* Supporting marketing content */
+
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}

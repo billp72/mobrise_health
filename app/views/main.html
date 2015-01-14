@@ -1,0 +1,96 @@
+<section class="drag">
+ <header id="mobile_head" ng-click="home()">Mobrise</header>
+  <div id="dragArea" 
+     data-drop="true" 
+     ng-model="list" 
+     data-jqyoui-options="optionsList1" 
+     jqyoui-droppable="{onDrop:'dropCallback'}">
+   <div id="mobile_schedule">
+   		<table class="trtable override">
+   		<tr>
+   		 <thead>
+   		 <th>activity</th>
+   		 <th>day</th>
+   		 <th>time</th>
+   		 <th>duration</th>
+   		 <th>bmp</th>
+   		 </thead>
+   		</tr>
+   		<tbody>
+   		<tr>
+   		  <td>Zumba</td>
+   		  <td>Thursday</td>
+   		  <td>1:00pm</td>
+   		  <td>30min</td>
+   		  <td>120</td>
+   		  </tr>
+   		  <tr>
+   		  <td>pushups</td>
+   		  <td>Friday</td>
+   		  <td>2:00pm</td>
+   		  <td>30min</td>
+   		  <td>120</td>
+   		  </tr>
+   		</tbody>
+   	    </table>
+   </div>
+   <div id="mobile_progress">
+     <canvas id="myChart" width="200" height="200"></canvas>
+   </div>                             
+   <div id="items" class="btn btn-info btn-draggable" 
+    	ng-repeat="item in list" 
+    	ng-show="item.name" 
+    	data-drag="{{item.drag}}" 
+    	data-jqyoui-options="{revert: 'invalid'}" 
+    	ng-model="list" 
+    	jqyoui-draggable="{index: {{$index}},animate:true, onDrop:'dropCallback'}">
+     {{item.name}}
+  </div>                                
+ </div>
+ <menu class="mobile-menu">
+    <span class="status" ng-click="schedule()">schedule</span>
+    <span class="status" ng-click="settings()">settings</span>
+    <span class="schedule" ng-click="status()">
+       <img src="../images/scheduleIcon.gif" />
+    </span>
+ </menu>
+</section>
+
+<section id="exercise-container">
+    <header>Recommendations</header>
+    <div class="btn btn-droppable" 
+     ng-repeat="item in exercises" 
+     data-drop="true" 
+     ng-model="exercises" 
+     data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=exercises])'}"       
+     jqyoui-droppable="{index: {{$index}}}">        
+  <div class="btn btn-info btn-draggable" 
+       data-drag="{{item.drag}}" 
+       data-jqyoui-options="{revert: 'invalid'}" 
+       ng-model="exercises" 
+       jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}" 
+       ng-hide="!item.name">{{item.name}}
+  </div>        
+ </div>
+</section>
+
+<section id="category-container">
+   <header>Fitness Requirements</header>
+    <div ng-repeat="value in categories" class="dragibles">
+    <header class="goal" ng-click="recommondations(value)">{{value.header}}</header>
+    <div ng-repeat="val in value.values">
+      <input type="text" ng-model="val" ng-change="updateModel(val, $index)">
+    </div>
+    </div>
+</section>
+
+<menu class="sidetabs">
+  <li id="menu-side-goals" class="sidetab sidetab-skin-green tab-goal">
+  	<a href ng-click="toggleGoalsMenu()" class="sidetab-label">Goals</a>
+  	<menu ng-class="{'sidetab-menu-expanded': goalsMenuExpanded}" class="sidetab-menucontainer">
+  	  <label ng-repeat="goal in goals">
+  	    <input type="checkbox" ng-model="goal.selected" ng-change="toggleSelection(goal)">{{goal.name}}
+  	  </label>
+  	</menu>
+  </li>
+</menu>

@@ -187,7 +187,7 @@ angular.module('prototypeApp')
 	   }	
 	};
      $scope.optionsList1 = {
-    	accept: function(dragEl) {
+    	accept: function() {
       		if ($scope.list.length >= 7) {
         		return false;
       		} else {
@@ -195,7 +195,7 @@ angular.module('prototypeApp')
       		}
     	}
   	};
-    $scope.dropCallback = function(e, ui){
+    $scope.dropCallback = function(){
         //console.log($scope.list);  
     };
 	$scope.updateModel = function(goal, id){
@@ -215,21 +215,21 @@ angular.module('prototypeApp')
           var data = [
     		{
         		value: 300,
-        		color:"#F7464A",
-        		highlight: "#FF5A5E",
-        		label: "Red"
+        		color:'#F7464A',
+        		highlight: '#FF5A5E',
+        		label: 'Red'
     		},
     		{
         		value: 50,
-        		color: "#46BFBD",
-        		highlight: "#5AD3D1",
+        		color: '#46BFBD',
+        		highlight: '#5AD3D1',
         		label: "Green"
     		},
     		{
         		value: 100,
-        		color: "#FDB45C",
-        		highlight: "#FFC870",
-        		label: "Yellow"
+        		color: '#FDB45C',
+        		highlight: '#FFC870',
+        		label: 'Yellow'
     		}
 			];
 			
@@ -243,7 +243,7 @@ angular.module('prototypeApp')
     	document.getElementById('mobile_progress')
     		    .style.display = 'block';
     		    
-        var ctx = document.getElementById("myChart").getContext("2d");
+        var ctx = document.getElementById('myChart').getContext('2d');
 		var myNewChart = new Chart(ctx).Pie(data);
 		
 		console.log(myNewChart);

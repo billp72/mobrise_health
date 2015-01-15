@@ -306,7 +306,7 @@ module.exports = function (grunt) {
             branch: 'master'
         }
     }
- },
+   },
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -367,13 +367,13 @@ module.exports = function (grunt) {
                 '!<%= yeoman.dist %>/.git{,*/}*',
                 '!<%= yeoman.dist %>/Procfile',
                 '!<%= yeoman.dist %>/package.json',
-                '!<%= yeoman.dist %>/web.js',
+                '!<%= yeoman.dist %>/app.js',
                 '!<%= yeoman.dist %>/node_modules'
            ]
         }]
     },
     server: '.tmp'
-},
+   },
     // Test settings
     karma: {
       unit: {

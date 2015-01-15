@@ -132,19 +132,36 @@ module.exports = function (grunt) {
 
     // Empties folders to start fresh
     clean: {
-      dist: {
+    dist: {
         files: [{
-          dot: true,
-          src: [
-            '.tmp',
-            '<%= yeoman.dist %>/{,*/}*',
-            '!<%= yeoman.dist %>/.git{,*/}*'
-          ]
+            dot: true,
+            src: [
+                '.tmp',
+                '<%= yeoman.dist %>/*',
+                '!<%= yeoman.dist %>/.git{,*/}*',
+                '!<%= yeoman.dist %>/Procfile',
+                '!<%= yeoman.dist %>/package.json',
+                '!<%= yeoman.dist %>/app.js',
+                '!<%= yeoman.dist %>/node_modules'
+           ]
         }]
-      },
-      server: '.tmp'
     },
-
+    server: '.tmp'
+   },
+   buildcontrol: {
+    options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+    },
+    heroku: {
+        options: {
+            remote: 'git@heroku.com:morning-river-8104.git',
+            branch: 'master'
+        }
+    }
+   },
     // Add vendor prefixed styles
     autoprefixer: {
       options: {
@@ -293,20 +310,6 @@ module.exports = function (grunt) {
         html: ['<%= yeoman.dist %>/*.html']
       }
     },
-    buildcontrol: {
-    options: {
-        dir: 'dist',
-        commit: true,
-        push: true,
-        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-    },
-    heroku: {
-        options: {
-            remote: 'git@heroku.com:morning-river-8104.git',
-            branch: 'master'
-        }
-    }
-   },
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -357,23 +360,7 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
-    clean: {
-    dist: {
-        files: [{
-            dot: true,
-            src: [
-                '.tmp',
-                '<%= yeoman.dist %>/*',
-                '!<%= yeoman.dist %>/.git{,*/}*',
-                '!<%= yeoman.dist %>/Procfile',
-                '!<%= yeoman.dist %>/package.json',
-                '!<%= yeoman.dist %>/app.js',
-                '!<%= yeoman.dist %>/node_modules'
-           ]
-        }]
-    },
-    server: '.tmp'
-   },
+    
     // Test settings
     karma: {
       unit: {

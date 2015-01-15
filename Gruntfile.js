@@ -293,7 +293,20 @@ module.exports = function (grunt) {
         html: ['<%= yeoman.dist %>/*.html']
       }
     },
-
+    buildcontrol: {
+    options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+    },
+    heroku: {
+        options: {
+            remote: 'git@heroku.com:heroku-app-1985.git',
+            branch: 'master'
+        }
+    }
+ },
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -344,7 +357,23 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
-
+    clean: {
+    dist: {
+        files: [{
+            dot: true,
+            src: [
+                '.tmp',
+                '<%= yeoman.dist %>/*',
+                '!<%= yeoman.dist %>/.git{,*/}*',
+                '!<%= yeoman.dist %>/Procfile',
+                '!<%= yeoman.dist %>/package.json',
+                '!<%= yeoman.dist %>/web.js',
+                '!<%= yeoman.dist %>/node_modules'
+           ]
+        }]
+    },
+    server: '.tmp'
+},
     // Test settings
     karma: {
       unit: {
@@ -353,8 +382,7 @@ module.exports = function (grunt) {
       }
     }
   });
-  grunt.registerTask('heroku',
-    ['compass:dist', 'autoprefixer', 'imagemin']);
+  grunt.registerTask('deploy', ['buildcontrol']);
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {

@@ -157,7 +157,7 @@ module.exports = function (grunt) {
     },
     heroku: {
         options: {
-            remote: 'git@heroku.com:sheltered-waters-8869.git',
+            remote: 'git@heroku.com:quiet-scrubland-4687.git',
             branch: 'master'
         }
     }

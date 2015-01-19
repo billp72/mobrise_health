@@ -55,9 +55,19 @@
     </span>
  </menu>
 </section>
+<div class="holder">
+<section id="category-container">
+   <header class="hd">Fitness Requirements</header>
+    <div ng-repeat="value in categories" class="dragibles">
+    <header class="goal" ng-click="recommondations(value)">{{value.header}}</header>
+    <div ng-repeat="val in value.values">
+      <input class="category-fields" type="text" ng-model="val" ng-change="updateModel(val, $index)">
+    </div>
+    </div>
+</section>
 
 <section id="exercise-container">
-    <header>Recommendations</header>
+    <header class="hd">Recommendations</header>
     <div class="btn btn-droppable" 
      ng-repeat="item in exercises" 
      data-drop="true" 
@@ -73,17 +83,7 @@
   </div>        
  </div>
 </section>
-
-<section id="category-container">
-   <header>Fitness Requirements</header>
-    <div ng-repeat="value in categories" class="dragibles">
-    <header class="goal" ng-click="recommondations(value)">{{value.header}}</header>
-    <div ng-repeat="val in value.values">
-      <input type="text" ng-model="val" ng-change="updateModel(val, $index)">
-    </div>
-    </div>
-</section>
-
+</div>
 <menu class="sidetabs">
   <li id="menu-side-goals" class="sidetab sidetab-skin-green tab-goal">
   	<a href ng-click="toggleGoalsMenu()" class="sidetab-label">Goals</a>

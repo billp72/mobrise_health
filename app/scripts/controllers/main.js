@@ -170,6 +170,7 @@ angular.module('prototypeApp')
     	$scope.categories = subcats[calls];
      };
 	$scope.recommondations = function(recs){
+	
 	   var arr = exec[recs.id];
 
 	   for(var i=0; arr.length; i++){

@@ -224,7 +224,7 @@ angular.module('prototypeApp')
         		value: 50,
         		color: '#46BFBD',
         		highlight: '#5AD3D1',
-        		label: "Green"
+        		label: 'Green'
     		},
     		{
         		value: 100,

@@ -64,7 +64,7 @@ header.goal{
 
 /* Main marketing message and sign up button */
 .btn-droppable { width: 210px; height: 30px; padding-left: 0px; }
-.btn-draggable { width: 210px; height: 30px; padding: 5px; margin-left:5px;}
+.btn-draggable { width: 210px; height: 30px; padding: 5px; position: absolute; right: 0%;}
 .drag {
   text-align: right;
   border-bottom: 1px solid #e5e5e5;
@@ -74,6 +74,8 @@ header.goal{
 }
 div#mobile_schedule{
 	display:none;
+	position: absolute;
+	right: -1%;
 }
 div#mobile_schedule table.trtable.override tr th{
    padding-right:5px;
@@ -124,9 +126,9 @@ div#mobile_progress{
 }
 div.holder{
 	position: absolute;
-	top: 204px;
-	left: 3.5%;
-	width: 50%;
+	top: 16px;
+	left: 292px;
+	width: 23%;
 }
 header.hd{
    text-align:center
